@@ -1,5 +1,4 @@
 import PostModel from 'discourse/models/post';
-import TopicModel from 'discourse/models/topic';
 import { withPluginApi } from 'discourse/lib/plugin-api';
 
 export default {
@@ -29,34 +28,8 @@ export default {
       }
   	});
 
-  	// TopicModel.reopen({
-  	//   postSpecificCountAdsense: function(index) {
-  	//       return index === 2;
-  	//       let n = parseInt(siteSettings.adsense_nth_post_code);
-       //    if (n && n > 0) {
-       //        return (index % n) === 0;
-       //    } else {
-       //        return false;
-       //    }
-  	  // }.property('post_number')
-  	// });
-
     withPluginApi('0.1', api => {
-
-      api.decorateWidget('post-article:after', dec => {
-
-          if (dec.canConnectComponent) {
-              return dec.connect({ component: 'adplugin-container', context: 'model' });
-          }
-
-          // Old way for backwards compatibility
-          return dec.connect({
-              templateName: 'connectors/post-bottom/discourse-adplugin',
-              context: 'model'
-          });
-      });
-
-      api.decorateWidget('topic-list-item:after', dec => {
+      api.decorateWidget('post:after', dec => {
 
         if (dec.canConnectComponent) {
           return dec.connect({ component: 'adplugin-container', context: 'model' });
