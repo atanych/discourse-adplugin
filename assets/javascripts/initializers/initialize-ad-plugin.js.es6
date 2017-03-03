@@ -38,7 +38,7 @@ export default {
           } else {
               return false;
           }
-  	  }
+  	  }.property('post_number')
   	});
 
     withPluginApi('0.1', api => {
