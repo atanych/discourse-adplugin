@@ -1,3 +1,13 @@
-{{#if (isRenderAdvInList index siteSettings.adsense_nth_post_code)}}
-      {{google-adsense placement="post-bottom" postNumber=index}}
+{{#if site.mobileView}}
+  {{#if (isRenderAdvInList index siteSettings.adsense_nth_post_code)}}
+    {{#if siteSettings.adsense_mobile_post_bottom_code}}
+      {{google-adsense placement="post-bottom" postNumber=model.post_number}}
+    {{/if}}
+  {{/if}}
+{{else}}
+  {{#if (isRenderAdvInList index siteSettings.adsense_nth_post_code)}}
+    {{#if siteSettings.adsense_post_bottom_code}}
+      {{google-adsense placement="post-bottom" postNumber=model.post_number}}
+    {{/if}}
+  {{/if}}
 {{/if}}
