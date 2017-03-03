@@ -1,17 +1,1 @@
-
-  {{#if model.postSpecificCountAdsense}}
-      <h1>{{siteSettings.adsense_post_bottom_code}}</h1>
-    {{#if siteSettings.adsense_post_bottom_code}}
-      {{google-adsense placement="post-bottom" postNumber=model.post_number}}
-    {{/if}}
-  {{/if}}
-  {{#if model.postSpecificCountDFP}}
-    {{#if siteSettings.dfp_post_bottom_code}}
-      {{google-dfp-ad placement="post-bottom" category=model.topic.category.slug postNumber=model.post_number}}
-    {{/if}}
-  {{/if}}
-  {{#if model.postSpecificCountAmazon}}
-    {{#if siteSettings.amazon_post_bottom_src_code}}
-      {{amazon-product-links placement="post-bottom" postNumber=model.post_number}}
-    {{/if}}
-  {{/if}}
+<h1>{{toggleBody}}</h1>
