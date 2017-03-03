@@ -4,6 +4,6 @@ export default Ember.Helper.extend({
     compute(params, hash) {
         let topic = params[0];
         let index = params[1];
-        return index;
+        return topic.postSpecificCountAdsense(index);
     }
 });
