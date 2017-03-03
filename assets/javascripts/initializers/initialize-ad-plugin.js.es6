@@ -21,7 +21,6 @@ export default {
       }.property('post_number'),
 
       isNthPost: function(n) {
-  	    return true;
         if (n && n > 0) {
           return (this.get('post_number') % n) === 0;
         } else {
