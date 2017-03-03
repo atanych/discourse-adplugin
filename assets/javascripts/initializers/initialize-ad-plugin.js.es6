@@ -29,17 +29,17 @@ export default {
       }
   	});
 
-  	TopicModel.reopen({
-  	  postSpecificCountAdsense: function(index) {
-  	      return index === 2;
-  	      let n = parseInt(siteSettings.adsense_nth_post_code);
-          if (n && n > 0) {
-              return (index % n) === 0;
-          } else {
-              return false;
-          }
-  	  }.property('post_number')
-  	});
+  	// TopicModel.reopen({
+  	//   postSpecificCountAdsense: function(index) {
+  	//       return index === 2;
+  	//       let n = parseInt(siteSettings.adsense_nth_post_code);
+       //    if (n && n > 0) {
+       //        return (index % n) === 0;
+       //    } else {
+       //        return false;
+       //    }
+  	  // }.property('post_number')
+  	// });
 
     withPluginApi('0.1', api => {
 
