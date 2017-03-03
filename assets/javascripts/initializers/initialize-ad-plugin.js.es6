@@ -29,7 +29,7 @@ export default {
   	});
 
     withPluginApi('0.1', api => {
-      api.decorateWidget('topic-list-item:after', dec => {
+      api.decorateWidget('post:after', dec => {
 
         if (dec.canConnectComponent) {
           return dec.connect({ component: 'adplugin-container', context: 'model' });
