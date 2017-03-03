@@ -31,9 +31,14 @@ export default {
   	});
 
   	TopicModel.reopen({
-  	  postSpecificCountAdsense: function() {
-        return true;
-  	  }.property('post_number')
+  	  postSpecificCountAdsense: function(index) {
+  	      let n = parseInt(siteSettings.amazon_nth_post_code);
+          if (n && n > 0) {
+              return (index % n) === 0;
+          } else {
+              return false;
+          }
+  	  }
   	});
 
     withPluginApi('0.1', api => {
