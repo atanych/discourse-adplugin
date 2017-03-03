@@ -1,5 +1,5 @@
 {{#if site.mobileView}}
-  {{#if model.postSpecificCountAdsense index}}
+  {{#if model.postSpecificCountAdsense}}
     {{#if siteSettings.adsense_mobile_post_bottom_code}}
       {{google-adsense placement="post-bottom" postNumber=model.post_number}}
     {{/if}}
@@ -15,7 +15,7 @@
     {{/if}}
   {{/if}}
 {{else}}
-  {{#if model.postSpecificCountAdsense index}}
+  {{#if model.postSpecificCountAdsense}}
     {{#if siteSettings.adsense_post_bottom_code}}
       {{google-adsense placement="post-bottom" postNumber=model.post_number}}
     {{/if}}
