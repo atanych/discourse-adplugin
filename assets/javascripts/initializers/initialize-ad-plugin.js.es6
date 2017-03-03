@@ -30,7 +30,7 @@ export default {
 
     withPluginApi('0.1', api => {
 
-      api.decorateWidget('post:after', dec => {
+      api.decorateWidget('post-article:after', dec => {
 
           if (dec.canConnectComponent) {
               return dec.connect({ component: 'adplugin-container', context: 'model' });
