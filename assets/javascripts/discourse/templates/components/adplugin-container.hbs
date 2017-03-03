@@ -1,5 +1,6 @@
 
   {{#if model.postSpecificCountAdsense}}
+      <h1>{{siteSettings.adsense_post_bottom_code}}</h1>
     {{#if siteSettings.adsense_post_bottom_code}}
       {{google-adsense placement="post-bottom" postNumber=model.post_number}}
     {{/if}}
