@@ -31,7 +31,7 @@ export default {
 
   	TopicModel.reopen({
   	  postSpecificCountAdsense: function(index) {
-  	      return true;
+  	      return index === 2;
   	      let n = parseInt(siteSettings.adsense_nth_post_code);
           if (n && n > 0) {
               return (index % n) === 0;
