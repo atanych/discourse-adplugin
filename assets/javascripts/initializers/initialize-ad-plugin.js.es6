@@ -1,4 +1,5 @@
 import PostModel from 'discourse/models/post';
+import TopicModel from 'discourse/models/topic';
 import { withPluginApi } from 'discourse/lib/plugin-api';
 
 export default {
@@ -27,6 +28,12 @@ export default {
           return false;
         }
       }
+  	});
+
+  	TopicModel.reopen({
+  	  postSpecificCountAdsense: function() {
+        return true;
+  	  }.property('post_number')
   	});
 
     withPluginApi('0.1', api => {
