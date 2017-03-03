@@ -1,5 +1,4 @@
-
-Ember.Handlebars.registerHelper('zubov', function(user, group, options){
+Handlebars.registerHelper('zubov', function(user, group, options){
     user = Ember.Handlebars.get(this, user, options);
     group = Ember.Handlebars.get(this, group, options);
     return user;
